@@ -2,6 +2,8 @@ const apiURL = 'https://fast-cove-95183.herokuapp.com/';
 var occasionData
 var occasionSelected
 
+
+
 fetch(apiURL)
 .then(response => response.json())
 .then(response => occasionData = response)
@@ -19,15 +21,24 @@ document.querySelector("#dropD").addEventListener('submit', function(event){
 function populateDescription () {
  var descriptionP = document.querySelector(".description-content")
  console.log(descriptionP)
+        // $ul.removeChild($li)
  occasionData.map(item => {
    if (item.occasion === occasionSelected) {
      var outfitDesc = item.outfitDescription
      descriptionP.innerHTML = outfitDesc
      var wolfImage = document.querySelector(".wolf-image")
      wolfImage.src = item.image
+
+     var $ul = document.querySelector('.accessories-list')
+
+     while ($ul.firstChild) {
+       $ul.removeChild($ul.firstChild)
+     }
+
      for (var i = 0; i < item.accDescription.length; i++) {
        var $li = document.createElement('li')
        var $ul = document.querySelector('.accessories-list')
+
        $li.innerHTML = item.accDescription[i]
        $ul.appendChild($li)
      }
