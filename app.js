@@ -6,7 +6,10 @@ var occasionSelected
 
 fetch(apiURL)
 .then(response => response.json())
-.then(response => occasionData = response)
+.then(response => {
+  occasionData = response;
+  addOption()
+})
 
 function setOccasion(sel) {
  occasionSelected = sel.options[sel.selectedIndex].text;
@@ -45,3 +48,13 @@ function populateDescription () {
    }
  })
 };
+
+function addOption () {
+  var dropdownList = document.querySelector('select')
+  for (var i = 6; i < occasionData.length; i++) {
+    var newOcc = occasionData[i].occasion
+    var newOption = document.createElement('option')
+    newOption.innerHTML = newOcc
+    dropdownList.appendChild(newOption)
+  }
+}
