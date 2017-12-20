@@ -2,8 +2,6 @@ const apiURL = 'https://fast-cove-95183.herokuapp.com/';
 var occasionData
 var occasionSelected
 
-
-
 fetch(apiURL)
 .then(response => response.json())
 .then(response => {
@@ -57,4 +55,35 @@ function addOption () {
     newOption.innerHTML = newOcc
     dropdownList.appendChild(newOption)
   }
+  document.querySelector("#dropD").addEventListener('submit', function(event){
+   console.log('working')
+   event.preventDefault();
+   populateDescription2();
+  });
 }
+
+
+function populateDescription2 () {
+ var descriptionP = document.querySelector(".description-content")
+ console.log(descriptionP)
+        // $ul.removeChild($li)
+ occasionData.map(item => {
+   if (item.occasion === occasionSelected) {
+     var outfitDesc = item.outfitDescription
+     descriptionP.innerHTML = outfitDesc
+     var wolfImage = document.querySelector(".wolf-image")
+     wolfImage.src = item.image
+
+     var $ul = document.querySelector('.accessories-list')
+
+     while ($ul.firstChild) {
+       $ul.removeChild($ul.firstChild)
+     }
+       var $li = document.createElement('li')
+       var $ul = document.querySelector('.accessories-list')
+
+       $li.innerHTML = item.accDescription
+       $ul.appendChild($li)
+   }
+ })
+};
