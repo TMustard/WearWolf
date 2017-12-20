@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "DeValencia";
+  src: url("De Valencia.otf")
+}
+
+
+h1 {
+  font-family: "DeValencia";
+}
+
+.start {
+  padding: 20px;
+}
