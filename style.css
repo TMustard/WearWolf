@@ -3,11 +3,43 @@
   src: url("De Valencia.otf")
 }
 
+body {
+  background-color: gray;
+}
 
-h1 {
+
+h1, h2 {
   font-family: "DeValencia";
 }
 
-.start {
+
+
+button {
   padding: 20px;
+}
+
+.top {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+
+
+.occasion {
+margin-bottom: 40px;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.small-logo {
+  text-align: center;
+}
+
+.wolf-image {
+  max-height: 500px
 }

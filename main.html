@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>WearWolf</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="top">
     <h1 class="small-logo">WearWolf</h1>
-    <a href="/index.html" class="back">Back</a>
+
   </div>
   <main>
     <div class="occasion">
-      <form action="#">
+      <form action="#" id="dropD">
       <select name="occasion-dropdown" id="drop" onchange='setOccasion(this)'>
         <option value="value0" selected>Select an Occasion</option>
         <option value="value1">Opera</option>
@@ -23,25 +24,33 @@
         <option value="value5">First Date</option>
         <option value="value6">Hipster Wolf</option>
       </select>
+      <input type="submit" class="goButton" value="Go >">
       </form>
-      <div class="img-window"></div>
-    </div>
+      </div>
+      <img class="wolf-image" src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimage.ibb.co%2Fkqp7fR%2Fgolf_were.png"></img>
+
   <div class="detail-wrapper">
-    <h2 class="description">Description</h2>
-      <p class="description-content">
-        DSDFDFHDFSFHGHSFDHFHHFSDHFSFHDFDHHFHFFHHFSHSFHSHSFHFHSFHSHFFHHFSFHSFHFHDSHFSHFSHF
-      </p>
-    <h2 class="accessories">Accessories</h2>
-    <ul>
-      <li>Thing</li>
-      <li>Thing</li>
-      <li>Thing</li>
-      <li>Thing</li>
-    </ul>
+    <div>
+      <h2 class="description">Description</h2>
+        <p class="description-content">
+
+        </p>
+    </div>
+    <div>
+      <h2 class="accessories">Accessories</h2>
+      <ul class="accessories-list"></ul>
+    </div>
+
+
   </div>
 </main>
   <button class="add">
     <a href="add.html">Add Occasion</a>
   </button>
+  <button>
+    <a href="/index.html" class="back">Back</a>
+  </button>
+
+<script src ='app.js'></script>
 </body>
 </html>
